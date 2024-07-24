@@ -6,16 +6,14 @@ public class PlayerHealth : MonoBehaviour
 {
     [SerializeField] private int health;
     public int MAX_HEALTH = 100;
-    private bool isDead = false;
-    public static PlayerHealth instance { get; private set; }
+    //private bool isDead = false;
+    public static PlayerHealth Instance { get; private set; }
 
-    // Start is called before the first frame update
     void Start()
     {
         health = MAX_HEALTH;
     }
 
-    // Update is called once per frame
     void Update()
     {
         
@@ -23,13 +21,15 @@ public class PlayerHealth : MonoBehaviour
 
     private void Awake()
     {
-        instance = this;
+        Instance = this;
     }
 
-    /*private IEnumerator VisualIndicator(Color color)
+    private IEnumerator VisualIndicator(Color color)
     {
-        //GetComponent<Spri>
-    }*/
+        GetComponent<SpriteRenderer>().color = color;
+        yield return new WaitForSeconds(0.15f);
+        GetComponent<SpriteRenderer>().color = Color.white;
+    }
 
     public void TakeDamage(int amount)
     {
@@ -39,6 +39,18 @@ public class PlayerHealth : MonoBehaviour
         }
 
         this.health -= amount;
-        
+        StartCoroutine(VisualIndicator(Color.red));
+
+        if(health < 0)
+        {
+            Die();
+        }
+
+    }
+
+    public void Die()
+    {
+        Destroy(gameObject);
+        Debug.Log("Dead");
     }
 }
