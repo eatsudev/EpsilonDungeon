@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 0f73c0efdb8a849408852fe5b8d355f6
+guid: 65d501a813c93ff42bec3a32a9d7cecb
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,7 +110,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: dungeonmc_idle_front-Sheet_0
+      name: dungeonmc_idle-Sheet_0
       rect:
         serializedVersion: 2
         x: 0
@@ -124,14 +124,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a9ccb404d9db6da43a185972704e536d
-      internalID: -1852866137
+      spriteID: 94b2a65c0b07319428203bcdefc27a20
+      internalID: -739477863
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dungeonmc_idle_front-Sheet_1
+      name: dungeonmc_idle-Sheet_1
       rect:
         serializedVersion: 2
         x: 64
@@ -145,8 +145,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c2ad913d92114474d9c7a2e649119f16
-      internalID: -481805304
+      spriteID: badd0c4c449768d44b80630fb86dbe15
+      internalID: 640393108
       vertices: []
       indices: 
       edges: []
@@ -162,8 +162,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      dungeonmc_idle_front-Sheet_0: -1852866137
-      dungeonmc_idle_front-Sheet_1: -481805304
+      dungeonmc_idle-Sheet_0: -739477863
+      dungeonmc_idle-Sheet_1: 640393108
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

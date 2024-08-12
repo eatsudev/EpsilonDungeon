@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: ca29b46ebae5fe4468e049264cba628e
+guid: eb2b9b69f94a9384ea642516c0f0a06d
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,13 +110,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: AquaScrapMC_idle_back-Sheet_0
+      name: dungeonmc_walk-Sheet_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 64
-        height: 84
+        height: 80
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,20 +124,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 51a66533347f8ff4a944f7335098714c
-      internalID: -634053259
+      spriteID: 3900210713a08bd4dbe01e8d693b0f45
+      internalID: 11620353
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AquaScrapMC_idle_back-Sheet_1
+      name: dungeonmc_walk-Sheet_1
       rect:
         serializedVersion: 2
         x: 64
         y: 0
         width: 64
-        height: 84
+        height: 80
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -145,8 +145,50 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1d5d746365d70fc41b8af56380bb731e
-      internalID: 383497966
+      spriteID: 31cf5a8fd09108846805002c787937a7
+      internalID: -453335133
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dungeonmc_walk-Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 64
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c035e81eec3fa9a459b6ef257eb54342
+      internalID: 574955988
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dungeonmc_walk-Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 64
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 391ea3fa69bb32041b07d7660b6ecae2
+      internalID: 1920770204
       vertices: []
       indices: 
       edges: []
@@ -162,8 +204,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      AquaScrapMC_idle_back-Sheet_0: -634053259
-      AquaScrapMC_idle_back-Sheet_1: 383497966
+      dungeonmc_walk-Sheet_0: 11620353
+      dungeonmc_walk-Sheet_1: -453335133
+      dungeonmc_walk-Sheet_2: 574955988
+      dungeonmc_walk-Sheet_3: 1920770204
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

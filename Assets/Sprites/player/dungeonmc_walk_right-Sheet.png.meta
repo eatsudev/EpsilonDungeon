@@ -115,7 +115,7 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 128
+        width: 64
         height: 80
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -124,8 +124,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a01ab9a303d65c442a64726c5140c825
-      internalID: -797799523
+      spriteID: 964d612c3e05e1c49853e96eed5604df
+      internalID: 414403733
       vertices: []
       indices: 
       edges: []
@@ -134,9 +134,9 @@ TextureImporter:
       name: dungeonmc_walk_right-Sheet_1
       rect:
         serializedVersion: 2
-        x: 128
+        x: 64
         y: 0
-        width: 128
+        width: 64
         height: 80
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -145,8 +145,50 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dca771d464e082b47ab09e461bdde3df
-      internalID: 2069653317
+      spriteID: b8ffc9e7d89210c499b6eb1e11b70559
+      internalID: 378389302
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dungeonmc_walk_right-Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 64
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ececbd4767abde4b81e7a64c664b413
+      internalID: 991265446
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dungeonmc_walk_right-Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 64
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3d0948b8abe07647ba65be41d304b6f
+      internalID: -1110872423
       vertices: []
       indices: 
       edges: []
@@ -162,8 +204,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      dungeonmc_walk_right-Sheet_0: -797799523
-      dungeonmc_walk_right-Sheet_1: 2069653317
+      dungeonmc_walk_right-Sheet_0: 414403733
+      dungeonmc_walk_right-Sheet_1: 378389302
+      dungeonmc_walk_right-Sheet_2: 991265446
+      dungeonmc_walk_right-Sheet_3: -1110872423
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

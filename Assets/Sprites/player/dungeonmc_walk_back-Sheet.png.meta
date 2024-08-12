@@ -115,7 +115,7 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 128
+        width: 64
         height: 80
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -124,8 +124,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 69b148d6f0c5dcd40b9ef8ce35f72ba6
-      internalID: 859175002
+      spriteID: ed165b11b8402d5468f75f6eecd359d5
+      internalID: 790536429
       vertices: []
       indices: 
       edges: []
@@ -134,9 +134,9 @@ TextureImporter:
       name: dungeonmc_walk_back-Sheet_1
       rect:
         serializedVersion: 2
-        x: 128
+        x: 64
         y: 0
-        width: 128
+        width: 64
         height: 80
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -145,8 +145,50 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8e6870a439508ff4f9bc731d336e0711
-      internalID: 424239795
+      spriteID: eb07fe7c7ede98d42872f065e2469672
+      internalID: 1219824301
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dungeonmc_walk_back-Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 64
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49a4f9a84f53c184bad7496984d614e5
+      internalID: 873522839
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dungeonmc_walk_back-Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 64
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88ecc1f7001b037488b66579ee63d65a
+      internalID: -2136561490
       vertices: []
       indices: 
       edges: []
@@ -162,8 +204,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      dungeonmc_walk_back-Sheet_0: 859175002
-      dungeonmc_walk_back-Sheet_1: 424239795
+      dungeonmc_walk_back-Sheet_0: 790536429
+      dungeonmc_walk_back-Sheet_1: 1219824301
+      dungeonmc_walk_back-Sheet_2: 873522839
+      dungeonmc_walk_back-Sheet_3: -2136561490
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

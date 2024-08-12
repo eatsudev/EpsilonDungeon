@@ -124,8 +124,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8120f89ff7f70e64383311ed48b4c0ed
-      internalID: 2134388540
+      spriteID: a5dee77d1a9fd7b4e90fe5f8f61addcc
+      internalID: -903643878
       vertices: []
       indices: 
       edges: []
@@ -145,8 +145,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7a79457814075644ea5a7eed43d31f90
-      internalID: 2120031256
+      spriteID: 219f675f490a57a4fbe948c4545f3678
+      internalID: -407331648
       vertices: []
       indices: 
       edges: []
@@ -162,8 +162,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      dungeonmc_idle_right-Sheet_0: 2134388540
-      dungeonmc_idle_right-Sheet_1: 2120031256
+      dungeonmc_idle_right-Sheet_0: -903643878
+      dungeonmc_idle_right-Sheet_1: -407331648
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

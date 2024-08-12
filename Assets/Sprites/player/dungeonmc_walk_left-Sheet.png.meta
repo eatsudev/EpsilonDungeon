@@ -115,7 +115,7 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 128
+        width: 64
         height: 80
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -124,8 +124,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2247824a80612904894b96cb61ab41b0
-      internalID: 2056385148
+      spriteID: d450797b33f9a1e4dbcd3985942dad6c
+      internalID: 1245710506
       vertices: []
       indices: 
       edges: []
@@ -134,9 +134,9 @@ TextureImporter:
       name: dungeonmc_walk_left-Sheet_1
       rect:
         serializedVersion: 2
-        x: 128
+        x: 64
         y: 0
-        width: 128
+        width: 64
         height: 80
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -145,8 +145,50 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f99d8df0231f0544e83abd2273764a7d
-      internalID: -2073245328
+      spriteID: 2afbb5de33a285f4da6e4d82eb8a711f
+      internalID: -1391842362
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dungeonmc_walk_left-Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 64
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 839a0a481c4a9c046818a44b2e470a0d
+      internalID: 1719311109
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dungeonmc_walk_left-Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 64
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8dcf42016911e764f9b8eb8d230d9e1a
+      internalID: 2035763143
       vertices: []
       indices: 
       edges: []
@@ -162,8 +204,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      dungeonmc_walk_left-Sheet_0: 2056385148
-      dungeonmc_walk_left-Sheet_1: -2073245328
+      dungeonmc_walk_left-Sheet_0: 1245710506
+      dungeonmc_walk_left-Sheet_1: -1391842362
+      dungeonmc_walk_left-Sheet_2: 1719311109
+      dungeonmc_walk_left-Sheet_3: 2035763143
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
