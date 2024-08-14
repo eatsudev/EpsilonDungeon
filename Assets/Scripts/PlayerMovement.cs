@@ -8,7 +8,8 @@ public class PlayerMovement : MonoBehaviour
     public Rigidbody2D rb; 
     private Vector2 movement; 
     private Vector2 lastMovement; 
-    public Animator anim; 
+    public Animator anim;
+    public Transform spriteTransform;
 
     private void Awake()
     {
@@ -29,11 +30,36 @@ public class PlayerMovement : MonoBehaviour
         anim.SetFloat("Vertical", lastMovement.y);
 
         anim.SetFloat("Speed", movement.sqrMagnitude);
+        FlipSprite();
     }
 
     void FixedUpdate()
     {
         rb.MovePosition(rb.position + movement * speed * Time.fixedDeltaTime);
+    }
+
+    void FlipSprite()
+    {
+        if (lastMovement.x < 0)
+        {
+            spriteTransform.localScale = new Vector3(-1, 1, 1);
+        }
+        else if (lastMovement.x > 0)
+        {
+            spriteTransform.localScale = new Vector3(1, 1, 1);
+        }
+
+        if (lastMovement.y != 0)
+        {
+            if (lastMovement.y > 0)
+            {
+                spriteTransform.localScale = new Vector3(1, 1, 1); 
+            }
+            else if (lastMovement.y < 0)
+            {
+                spriteTransform.localScale = new Vector3(-1, 1, 1); 
+            }
+        }
     }
 
 
