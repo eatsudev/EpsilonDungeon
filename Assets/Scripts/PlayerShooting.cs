@@ -11,11 +11,13 @@ public class PlayerShooting : MonoBehaviour
     public Transform bulletSpawnPoint; 
     private bool canFire = true; 
     private float timer; 
-    public float timeBetweenFiring = 0.5f; 
+    public float timeBetweenFiring = 0.5f;
+    //public Animator anim;
 
     void Start()
     {
-        mainCam = Camera.main; 
+        mainCam = Camera.main;
+        //anim = GetComponentInParent<Animator>();
     }
 
     void Update()
