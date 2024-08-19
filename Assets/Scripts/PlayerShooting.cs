@@ -12,26 +12,28 @@ public class PlayerShooting : MonoBehaviour
     private bool canFire = true; 
     private float timer; 
     public float timeBetweenFiring = 0.5f;
-    //public Animator anim;
+    public Animator anim;
 
     void Start()
     {
         mainCam = Camera.main;
-        //anim = GetComponentInParent<Animator>();
+        anim = GetComponentInParent<Animator>();
     }
 
     void Update()
     {
         mousePos = mainCam.ScreenToWorldPoint(Input.mousePosition);
 
-        Vector3 rotation = mousePos - transform.position;
-        float rotZ = Mathf.Atan2(rotation.y, rotation.x) * Mathf.Rad2Deg;
+        Vector3 direction = mousePos - transform.position;
+        float rotZ = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
 
         transform.rotation = Quaternion.Euler(0, 0, rotZ);
+        anim.SetFloat("HorizontalAttack", direction.x);
+        anim.SetFloat("VerticalAttack", direction.y);
 
-        if (Input.GetMouseButton(0) && canFire)
+        if (Input.GetMouseButtonDown(0) && canFire)
         {
-            Shoot();
+            Shoot(direction);
         }
 
         if (!canFire)
@@ -45,12 +47,12 @@ public class PlayerShooting : MonoBehaviour
         }
     }
 
-    void Shoot()
+    void Shoot(Vector3 direction)
     {
         GameObject newBullet = Instantiate(bulletPrefab, bulletSpawnPoint.position, Quaternion.identity);
-        Vector3 bulletDirection = (mousePos - bulletSpawnPoint.position).normalized;
+        newBullet.GetComponent<Bullet>().SetDirection(direction);
 
-        newBullet.GetComponent<Bullet>().SetDirection(bulletDirection);
+        anim.SetTrigger("shoot");
         canFire = false;
     }
 }

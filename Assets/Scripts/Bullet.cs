@@ -35,6 +35,11 @@ public class Bullet : MonoBehaviour
 
             Destroy(gameObject);
         }
+
+        if (other.CompareTag("Walls"))
+        {
+            Destroy(gameObject);
+        }
     }
     public void SetDirection(Vector3 newDirection)
     {
