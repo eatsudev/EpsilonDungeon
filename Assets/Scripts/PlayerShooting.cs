@@ -28,11 +28,10 @@ public class PlayerShooting : MonoBehaviour
         float rotZ = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
 
         transform.rotation = Quaternion.Euler(0, 0, rotZ);
-        anim.SetFloat("Horizontal", direction.x);
-        anim.SetFloat("Vertical", direction.y);
-        anim.SetBool("isShooting", false);
+        anim.SetFloat("HorizontalAttack", direction.x);
+        anim.SetFloat("VerticalAttack", direction.y);
 
-        if (Input.GetMouseButton(0) && canFire)
+        if (Input.GetMouseButtonDown(0) && canFire)
         {
             Shoot(direction);
         }
@@ -53,7 +52,7 @@ public class PlayerShooting : MonoBehaviour
         GameObject newBullet = Instantiate(bulletPrefab, bulletSpawnPoint.position, Quaternion.identity);
         newBullet.GetComponent<Bullet>().SetDirection(direction);
 
-        anim.SetBool("isShooting", true);
+        anim.SetTrigger("shoot");
         canFire = false;
     }
 }
