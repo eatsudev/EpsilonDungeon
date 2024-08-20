@@ -5,9 +5,11 @@ using UnityEngine;
 public class PlayerHealth : MonoBehaviour
 {
     [SerializeField] private int health;
-    public int MAX_HEALTH = 100;
-    //private bool isDead = false;
+    public int MAX_HEALTH = 3;
     public static PlayerHealth Instance { get; private set; }
+    public Animator anim;
+    private Vector2 lastMovement;
+    public float deathDelay = 2f;
 
     void Start()
     {
@@ -22,6 +24,7 @@ public class PlayerHealth : MonoBehaviour
     private void Awake()
     {
         Instance = this;
+        anim = GetComponent<Animator>();
     }
 
     private IEnumerator VisualIndicator(Color color)
@@ -39,18 +42,36 @@ public class PlayerHealth : MonoBehaviour
         }
 
         this.health -= amount;
+        
         StartCoroutine(VisualIndicator(Color.red));
 
-        if(health < 0)
+        if(health < 1)
         {
             Die();
         }
 
     }
 
+    public void SetLastMovement(Vector2 movement)
+    {
+        lastMovement = movement.normalized;
+    }
+
     public void Die()
     {
+        anim.SetBool("isDead", true);
+
+        anim.SetFloat("HorizontalDeath", lastMovement.x);
+        anim.SetFloat("VerticalDeath", lastMovement.y);
+
+        StartCoroutine(WaitAndDestroy());
+        Debug.Log("Player Dead");
+    }
+
+    private IEnumerator WaitAndDestroy()
+    {
+        yield return new WaitForSeconds(deathDelay);
+
         Destroy(gameObject);
-        Debug.Log("Dead");
     }
 }

@@ -7,12 +7,13 @@ public class EnemyHealth : MonoBehaviour
     public int maxHealth = 1;
 
     private int currentHealth;
-    //public Animator anim;
+    public Animator anim;
+    public float delayDead = 1f;
 
     private void Start()
     {
         currentHealth = maxHealth;
-        //anim = GetComponent<Animator>();
+        anim = GetComponent<Animator>();
     }
 
     public void TakeDamage(int damage)
@@ -27,9 +28,14 @@ public class EnemyHealth : MonoBehaviour
 
     private void Die()
     {
-        //anim.SetTrigger("die");
+        anim.SetTrigger("isDead");
         //StartCoroutine(WaitForAnimationAndDestroy());
         Debug.Log("enemy dead");
         Destroy(gameObject);
     }
+
+    /*private IEnumerator WaitForAnimationAndDestroy()
+    {
+        
+    }*/
 }

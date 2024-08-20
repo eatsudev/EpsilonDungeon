@@ -31,6 +31,11 @@ public class PlayerMovement : MonoBehaviour
 
         anim.SetFloat("Speed", movement.sqrMagnitude);
         FlipSprite();
+
+        if (movement != Vector2.zero)
+        {
+            PlayerHealth.Instance.SetLastMovement(movement);
+        }
     }
 
     void FixedUpdate()
