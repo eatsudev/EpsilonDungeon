@@ -5,10 +5,10 @@ using UnityEngine;
 public class EnemyHealth : MonoBehaviour
 {
     public int maxHealth = 1;
-
     private int currentHealth;
     public Animator anim;
     public float delayDead = 1f;
+    private Vector2 lastMovement;
 
     private void Start()
     {
@@ -26,16 +26,26 @@ public class EnemyHealth : MonoBehaviour
         }
     }
 
-    private void Die()
+    public void SetLastMovement(Vector2 movement)
     {
-        anim.SetTrigger("isDead");
-        //StartCoroutine(WaitForAnimationAndDestroy());
-        Debug.Log("enemy dead");
-        Destroy(gameObject);
+        lastMovement = movement.normalized;
     }
 
-    /*private IEnumerator WaitForAnimationAndDestroy()
+    private void Die()
     {
-        
-    }*/
+        anim.SetFloat("HorizontalDeath", lastMovement.x);
+        anim.SetFloat("VerticalDeath", lastMovement.y);
+
+        anim.SetTrigger("isDead");
+
+        Debug.Log("enemy dead");
+
+        StartCoroutine(DestroyAfterDelay(delayDead));
+    }
+
+    private IEnumerator DestroyAfterDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        Destroy(gameObject);
+    }
 }

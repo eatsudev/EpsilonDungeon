@@ -19,5 +19,16 @@ public class MainMenu : MonoBehaviour
         SceneManager.LoadScene("Scene1");
         Time.timeScale = 1f;
     }
-    
+
+
+    public void Cutscene2Button()
+    {
+        SceneManager.LoadScene("Cutscene2");
+    }
+
+    public void Cutscene3Button()
+    {
+        SceneManager.LoadScene("Cutscene3");
+    }
+
 }
