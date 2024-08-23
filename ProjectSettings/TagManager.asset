@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Enemy
   - Walls
+  - varA
+  - varB
+  - varC
   layers:
   - Default
   - TransparentFX

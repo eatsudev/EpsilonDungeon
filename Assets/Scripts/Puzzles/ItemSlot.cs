@@ -5,12 +5,39 @@ using UnityEngine.EventSystems;
 
 public class ItemSlot : MonoBehaviour, IDropHandler
 {
+    public string requiredItemTag; 
+    private GameObject droppedItem; 
+
     public void OnDrop(PointerEventData eventData)
     {
-        Debug.Log("OnDrop");
-        if(eventData.pointerDrag != null)
+        if (eventData.pointerDrag != null)
         {
-            eventData.pointerDrag.GetComponent<RectTransform>().anchoredPosition = GetComponent<RectTransform>().anchoredPosition;
+            droppedItem = eventData.pointerDrag;
+            droppedItem.GetComponent<RectTransform>().anchoredPosition = GetComponent<RectTransform>().anchoredPosition;
+        }
+    }
+
+    public bool CheckItem()
+    {
+        if (droppedItem != null && droppedItem.CompareTag(requiredItemTag))
+        {
+            Debug.Log("Correct item");
+            return true; 
+        }
+        else
+        {
+            Debug.Log("Incorrect item");
+            ResetItem(); 
+            return false;
+        }
+    }
+
+    public void ResetItem()
+    {
+        if (droppedItem != null)
+        {
+            droppedItem.GetComponent<DragDrop>().ResetPosition();
+            droppedItem = null;
         }
     }
 
