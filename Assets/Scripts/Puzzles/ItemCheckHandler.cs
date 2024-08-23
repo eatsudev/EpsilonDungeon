@@ -9,10 +9,15 @@ public class ItemCheckHandler : MonoBehaviour
     public float delayforAnimation = 1f;
     public GameObject key;
     public GameObject dragDropCanvas;
+    private PlayerMovement playerMovement;
+    public GameObject player;
+    private PlayerShooting playerShooting;
 
     private void Awake()
     {
         anim = GetComponent<Animator>();
+        playerMovement = player.GetComponent<PlayerMovement>();
+        playerShooting = player.GetComponentInChildren<PlayerShooting>();
     }
 
     public void CheckItems()
@@ -32,7 +37,9 @@ public class ItemCheckHandler : MonoBehaviour
         {
             Debug.Log("benar");
             Time.timeScale = 1f;
-            dragDropCanvas.SetActive(false);
+            dragDropCanvas.SetActive(false); 
+            playerMovement.enabled = true;
+            playerShooting.enabled = true;
             StartCoroutine(KeyShowDelay(delayforAnimation));
             anim.SetTrigger("chestOpen");
             StartCoroutine(DestroyAfterDelay(delayforAnimation));

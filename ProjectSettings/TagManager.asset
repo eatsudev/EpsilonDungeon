@@ -9,6 +9,8 @@ TagManager:
   - varA
   - varB
   - varC
+  - varD
+  - varE
   layers:
   - Default
   - TransparentFX

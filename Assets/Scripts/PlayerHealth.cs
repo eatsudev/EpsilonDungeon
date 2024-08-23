@@ -10,10 +10,12 @@ public class PlayerHealth : MonoBehaviour
     public Animator anim;
     private Vector2 lastMovement;
     public float deathDelay = 2f;
+    public Transform healthBarFill;
 
     void Start()
     {
         health = MAX_HEALTH;
+        UpdateHealthBar();
     }
 
     void Update()
@@ -44,8 +46,9 @@ public class PlayerHealth : MonoBehaviour
         this.health -= amount;
         
         StartCoroutine(VisualIndicator(Color.red));
+        UpdateHealthBar();
 
-        if(health < 1)
+        if (health < 1)
         {
             Die();
         }
@@ -73,5 +76,11 @@ public class PlayerHealth : MonoBehaviour
         yield return new WaitForSeconds(deathDelay);
 
         Destroy(gameObject);
+    }
+
+    private void UpdateHealthBar()
+    {
+        float healthPercent = (float)health / MAX_HEALTH;
+        healthBarFill.localScale = new Vector3(healthPercent, 1f, 1f);
     }
 }

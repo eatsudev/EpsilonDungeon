@@ -16,9 +16,17 @@ public class EnemyHealth : MonoBehaviour
         anim = GetComponent<Animator>();
     }
 
+    private IEnumerator VisualIndicator(Color color)
+    {
+        GetComponent<SpriteRenderer>().color = color;
+        yield return new WaitForSeconds(0.15f);
+        GetComponent<SpriteRenderer>().color = Color.white;
+    }
+
     public void TakeDamage(int damage)
     {
         currentHealth -= damage;
+        StartCoroutine(VisualIndicator(Color.red));
 
         if (currentHealth <= 0)
         {
