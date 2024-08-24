@@ -13,6 +13,7 @@ public class PlayerShooting : MonoBehaviour
     private float timer; 
     public float timeBetweenFiring = 0.5f;
     public Animator anim;
+    public AudioSource shootSFX;
 
     void Start()
     {
@@ -53,6 +54,7 @@ public class PlayerShooting : MonoBehaviour
         newBullet.GetComponent<Bullet>().SetDirection(direction);
 
         anim.SetTrigger("shoot");
+        shootSFX.Play();
         canFire = false;
     }
 }

@@ -12,6 +12,8 @@ public class PlayerHealth : MonoBehaviour
     private Vector2 lastMovement;
     public float deathDelay = 2f;
 
+    public GameObject deathUI;
+    public AudioSource hitSFX;
 
     public Image healthFill;
 
@@ -42,6 +44,7 @@ public class PlayerHealth : MonoBehaviour
         }
 
         this.health -= amount;
+        hitSFX.Play();
 
         StartCoroutine(VisualIndicator(Color.red));
         UpdateHealthBar();
@@ -66,6 +69,7 @@ public class PlayerHealth : MonoBehaviour
         anim.SetFloat("VerticalDeath", lastMovement.y);
 
         StartCoroutine(WaitAndDestroy());
+        StartCoroutine(DeathPauseAndShowUI());
         Debug.Log("Player Dead");
     }
 
@@ -80,5 +84,15 @@ public class PlayerHealth : MonoBehaviour
     {
         float healthPercent = (float)health / MAX_HEALTH;
         healthFill.fillAmount = healthPercent;
+    }
+
+    private IEnumerator DeathPauseAndShowUI()
+    {
+        deathUI.SetActive(true);
+        //Time.timeScale = 0f;
+        yield return new WaitForSeconds(0.5f);
+        Time.timeScale = 1f;
+        yield return new WaitForSeconds(0.5f);
+        Time.timeScale = 0f;
     }
 }

@@ -10,20 +10,38 @@ public class PlayerMovement : MonoBehaviour
     private Vector2 lastMovement; 
     public Animator anim;
     public Transform spriteTransform;
+    public AudioSource stepSFX;
+
+    private bool isPlayingStepSound = false;
+    public float stepSoundInterval = 0.4f;
 
     private void Awake()
     {
         anim = GetComponent<Animator>();
+        if (stepSFX == null)
+        {
+            stepSFX = GetComponent<AudioSource>();
+        }
     }
 
     void Update()
     {
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
+        
 
         if (movement != Vector2.zero)
         {
             lastMovement = movement;
+
+            if (!isPlayingStepSound)
+            {
+                StartCoroutine(PlayStepSound());
+            }
+        }
+        else
+        {
+            StopStepSound();
         }
 
         anim.SetFloat("Horizontal", lastMovement.x);
@@ -67,5 +85,37 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    private IEnumerator PlayStepSound()
+    {
+        isPlayingStepSound = true;
+
+        if (stepSFX != null)
+        {
+            stepSFX.Play();
+        }
+
+        yield return new WaitForSeconds(stepSoundInterval);
+
+        if (movement == Vector2.zero)
+        {
+            isPlayingStepSound = false;
+        }
+        else
+        {
+            StartCoroutine(PlayStepSound());
+        }
+    }
+
+    private void StopStepSound()
+    {
+        if (isPlayingStepSound)
+        {
+            if (stepSFX != null)
+            {
+                stepSFX.Stop();
+            }
+            isPlayingStepSound = false;
+        }
+    }
 
 }

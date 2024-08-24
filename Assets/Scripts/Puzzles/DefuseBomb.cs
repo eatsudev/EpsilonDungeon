@@ -16,6 +16,8 @@ public class DefuseBomb : MonoBehaviour
     public Animator anim;
     public GameObject key;
     public GameObject explosion;
+    public AudioSource defuseSFX;
+    public AudioSource explosionSFX;
 
     private void Awake()
     {
@@ -55,6 +57,7 @@ public class DefuseBomb : MonoBehaviour
     private void Safe()
     {
         Debug.Log("Bomb defused!");
+        defuseSFX.Play();
         playerMovement.enabled = true;
         playerShooting.enabled = true;
 
@@ -67,6 +70,7 @@ public class DefuseBomb : MonoBehaviour
     public void Explode()
     {
         Debug.Log("Bomb exploded!");
+        explosionSFX.Play();
         canvas.SetActive(false);
         explosion.SetActive(true);
         playerHealth.Die();

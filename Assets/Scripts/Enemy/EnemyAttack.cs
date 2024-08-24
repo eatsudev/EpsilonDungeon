@@ -16,11 +16,19 @@ public class EnemyAttack : MonoBehaviour
 
     private Vector2 direction;
     private EnemyHealth enemyHealth;
+    public AudioSource stepSFX;
+
+    private bool isWalking = false;
 
     void Start()
     {
         anim = GetComponent<Animator>();
         enemyHealth = GetComponent<EnemyHealth>();
+
+        if (stepSFX == null)
+        {
+            stepSFX = GetComponent<AudioSource>();
+        }
     }
 
     void Update()
@@ -36,7 +44,6 @@ public class EnemyAttack : MonoBehaviour
 
         if (distanceToPlayer <= detectionRadius)
         {
-
             if (distanceToPlayer > attackRange)
             {
                 MoveTowardsPlayer();
@@ -60,10 +67,20 @@ public class EnemyAttack : MonoBehaviour
         direction = (player.position - transform.position).normalized;
         transform.position = Vector2.MoveTowards(transform.position, player.position, moveSpeed * Time.deltaTime);
         GetComponent<EnemyHealth>().SetLastMovement(direction);
+        
 
         anim.SetFloat("Horizontal", direction.x);
         anim.SetFloat("Vertical", direction.y);
         anim.SetFloat("Speed", direction.magnitude);
+
+        if (!isWalking)
+        {
+            if (stepSFX != null)
+            {
+                stepSFX.Play();
+            }
+            isWalking = true;
+        }
     }
 
     private void RaycastForPlayer()
@@ -108,6 +125,12 @@ public class EnemyAttack : MonoBehaviour
     private void SetIdle()
     {
         anim.SetFloat("Speed", 0f);
+
+        if (isWalking && stepSFX != null)
+        {
+            stepSFX.Stop();
+            isWalking = false;
+        }
     }
 
     public void DealDamage()
