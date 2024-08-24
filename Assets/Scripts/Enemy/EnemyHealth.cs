@@ -9,6 +9,7 @@ public class EnemyHealth : MonoBehaviour
     public Animator anim;
     public float delayDead = 1f;
     private Vector2 lastMovement;
+    private bool isDead = false;
 
     private void Start()
     {
@@ -25,6 +26,7 @@ public class EnemyHealth : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
+        if (isDead) return;
         currentHealth -= damage;
         StartCoroutine(VisualIndicator(Color.red));
 
@@ -41,6 +43,8 @@ public class EnemyHealth : MonoBehaviour
 
     private void Die()
     {
+        if (isDead) return; 
+        isDead = true; 
         anim.SetFloat("HorizontalDeath", lastMovement.x);
         anim.SetFloat("VerticalDeath", lastMovement.y);
 
@@ -55,5 +59,10 @@ public class EnemyHealth : MonoBehaviour
     {
         yield return new WaitForSeconds(delay);
         Destroy(gameObject);
+    }
+
+    public bool IsDead() 
+    {
+        return isDead;
     }
 }

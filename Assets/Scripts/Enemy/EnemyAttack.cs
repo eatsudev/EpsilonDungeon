@@ -15,16 +15,19 @@ public class EnemyAttack : MonoBehaviour
     public LayerMask playerLayer;
 
     private Vector2 direction;
+    private EnemyHealth enemyHealth;
 
     void Start()
     {
         anim = GetComponent<Animator>();
+        enemyHealth = GetComponent<EnemyHealth>();
     }
 
     void Update()
     {
-        if(player == null)
+        if (player == null || enemyHealth.IsDead())
         {
+            SetIdle();
             return;
         }
 
@@ -53,7 +56,7 @@ public class EnemyAttack : MonoBehaviour
 
     void MoveTowardsPlayer()
     {
-        if (player == null) return;
+        if (player == null || enemyHealth.IsDead()) return;
         direction = (player.position - transform.position).normalized;
         transform.position = Vector2.MoveTowards(transform.position, player.position, moveSpeed * Time.deltaTime);
         GetComponent<EnemyHealth>().SetLastMovement(direction);
@@ -65,7 +68,7 @@ public class EnemyAttack : MonoBehaviour
 
     private void RaycastForPlayer()
     {
-        if (!canAttack) return;
+        if (!canAttack || enemyHealth.IsDead()) return;
 
         Debug.DrawRay(transform.position, direction * attackRange, Color.red);
 
@@ -84,6 +87,7 @@ public class EnemyAttack : MonoBehaviour
 
     private IEnumerator Attack(PlayerHealth playerHealth)
     {
+        if (enemyHealth.IsDead()) yield break;
         canAttack = false;
 
         anim.SetTrigger("Attack");

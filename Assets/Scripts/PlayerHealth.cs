@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -10,17 +11,14 @@ public class PlayerHealth : MonoBehaviour
     public Animator anim;
     private Vector2 lastMovement;
     public float deathDelay = 2f;
-    public Transform healthBarFill;
+
+
+    public Image healthFill;
 
     void Start()
     {
         health = MAX_HEALTH;
         UpdateHealthBar();
-    }
-
-    void Update()
-    {
-        
     }
 
     private void Awake()
@@ -38,13 +36,13 @@ public class PlayerHealth : MonoBehaviour
 
     public void TakeDamage(int amount)
     {
-        if(amount < 0)
+        if (amount < 0)
         {
             throw new System.ArgumentOutOfRangeException("Cannot have negative damage");
         }
 
         this.health -= amount;
-        
+
         StartCoroutine(VisualIndicator(Color.red));
         UpdateHealthBar();
 
@@ -81,6 +79,6 @@ public class PlayerHealth : MonoBehaviour
     private void UpdateHealthBar()
     {
         float healthPercent = (float)health / MAX_HEALTH;
-        healthBarFill.localScale = new Vector3(healthPercent, 1f, 1f);
+        healthFill.fillAmount = healthPercent;
     }
 }
