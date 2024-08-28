@@ -6,36 +6,33 @@ using TMPro;
 
 public class RunningText : MonoBehaviour
 {
-    public TextMeshProUGUI textMeshPro;  // Reference to the TextMeshProUGUI component
-    public float typingSpeed = 0.05f;    // Speed of the typing effect
+    public TextMeshProUGUI textMeshPro;  
+    public float typingSpeed = 0.05f;    
 
-    private string fullText;             // The full text to display
+    private string fullText;             
 
     private void Start()
     {
-        // Store the full text from the TextMeshProUGUI component
         fullText = textMeshPro.text;
 
-        // Start the typewriter effect
         StartCoroutine(TypeText());
     }
 
     private IEnumerator TypeText()
     {
-        textMeshPro.text = "";  // Clear the text initially
+        textMeshPro.text = "";
 
         for (int i = 0; i < fullText.Length; i++)
         {
-            textMeshPro.text += fullText[i];  // Add one character at a time
+            textMeshPro.text += fullText[i];  
 
-            // If the player presses the Space key, skip the effect and show the full text
             if (Input.GetKeyDown(KeyCode.Space))
             {
                 textMeshPro.text = fullText;
                 break;
             }
 
-            yield return new WaitForSeconds(typingSpeed);  // Wait for the next character
+            yield return new WaitForSeconds(typingSpeed);
         }
     }
 }
