@@ -8432,6 +8432,8 @@ MonoBehaviour:
   rb: {fileID: 859751266}
   anim: {fileID: 0}
   spriteTransform: {fileID: 0}
+  stepSFX: {fileID: 0}
+  stepSoundInterval: 0.4
 --- !u!114 &859751270
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8448,6 +8450,9 @@ MonoBehaviour:
   MAX_HEALTH: 100
   anim: {fileID: 0}
   deathDelay: 2
+  deathUI: {fileID: 0}
+  hitSFX: {fileID: 0}
+  healthFill: {fileID: 0}
 --- !u!61 &859751271
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -10570,6 +10575,7 @@ MonoBehaviour:
   bulletSpawnPoint: {fileID: 0}
   timeBetweenFiring: 0.5
   anim: {fileID: 0}
+  shootSFX: {fileID: 0}
 --- !u!1 &1309929986
 GameObject:
   m_ObjectHideFlags: 0
