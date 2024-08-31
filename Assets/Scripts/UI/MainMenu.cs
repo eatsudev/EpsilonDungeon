@@ -15,9 +15,20 @@ public class MainMenu : MonoBehaviour
         Application.Quit();
     }
 
+    public void LevelsButton()
+    {
+        SceneManager.LoadScene("Levels");
+    }
+
     public void StartButton()
     {
         SceneManager.LoadScene("Tutorial");
+        Time.timeScale = 1f;
+    }
+
+    public void HomeButton()
+    {
+        SceneManager.LoadScene("MainMenu");
         Time.timeScale = 1f;
     }
 
@@ -67,6 +78,36 @@ public class MainMenu : MonoBehaviour
     public void Cutscene9Button()
     {
         SceneManager.LoadScene("Cutscene9");
+        Time.timeScale = 1.0f;
+    }
+
+    public void Level1Button()
+    {
+        SceneManager.LoadScene("Level1");
+        Time.timeScale = 1.0f;
+    }
+
+    public void Level2Button()
+    {
+        SceneManager.LoadScene("Level2");
+        Time.timeScale = 1.0f;
+    }
+
+    public void Level3Button()
+    {
+        SceneManager.LoadScene("Level3");
+        Time.timeScale = 1.0f;
+    }
+
+    public void Level4Button()
+    {
+        SceneManager.LoadScene("Level4");
+        Time.timeScale = 1.0f;
+    }
+
+    public void Level5Button()
+    {
+        SceneManager.LoadScene("Level5");
         Time.timeScale = 1.0f;
     }
 

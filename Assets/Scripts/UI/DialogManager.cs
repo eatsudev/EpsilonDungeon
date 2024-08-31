@@ -21,6 +21,13 @@ public class DialogManager : MonoBehaviour
     public GameObject Dialog15;
     public GameObject Dialog16;
 
+    public GameObject player;
+    private PlayerShooting playerShooting;
+
+    private void Awake()
+    {
+        playerShooting = player.GetComponentInChildren<PlayerShooting>();
+    }
 
     public void CloseDialog1()
     {
@@ -75,6 +82,7 @@ public class DialogManager : MonoBehaviour
     public void CloseDialog6()
     {
         Dialog6.SetActive(false);
+        playerShooting.enabled = true;
     }
 
     public void OpenDialog7()
@@ -85,6 +93,7 @@ public class DialogManager : MonoBehaviour
     public void CloseDialog7()
     {
         Dialog7.SetActive(false);
+        playerShooting.enabled = true;
     }
 
     public void OpenDialog8()
@@ -125,6 +134,7 @@ public class DialogManager : MonoBehaviour
     public void CloseDialog11()
     {
         Dialog11.SetActive(false);
+        playerShooting.enabled = true;
     }
 
     public void OpenDialog12()
@@ -175,5 +185,6 @@ public class DialogManager : MonoBehaviour
     public void CloseDialog16()
     {
         Dialog16.SetActive(false);
+        playerShooting.enabled = true;
     }
 }

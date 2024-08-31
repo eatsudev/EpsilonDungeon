@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ColliderDialog1 : MonoBehaviour
+public class ColliderDialog3 : MonoBehaviour
 {
-    public GameObject dialog1;
+    public GameObject dialog8;
     public GameObject player;
     private PlayerShooting playerShooting;
     private void Awake()
@@ -14,8 +14,8 @@ public class ColliderDialog1 : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        dialog1.SetActive(true);
-        playerShooting.enabled = false;  
+        dialog8.SetActive(true);
+        playerShooting.enabled = false;
         Destroy(gameObject);
     }
 }
