@@ -9,8 +9,12 @@ public class Key3 : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        gate3.SetActive(false);
-        nextFloorUI.SetActive(true);
-        Destroy(gameObject);
+        if(collision.gameObject.tag == "Player")
+        {
+            gate3.SetActive(false);
+            nextFloorUI.SetActive(true);
+            Destroy(gameObject);
+        }
+        
     }
 }
